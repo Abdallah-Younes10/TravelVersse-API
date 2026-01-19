@@ -9,12 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-   public function up()
+  public function up()
 {
     Schema::table('activities', function (Blueprint $table) {
-        $table->boolean('live_guide')->default(false)->after('type');
+        if (!Schema::hasColumn('activities', 'live_guide')) {
+            $table->boolean('live_guide')->default(false)->after('type');
+        }
     });
 }
+
 
 public function down()
 {
