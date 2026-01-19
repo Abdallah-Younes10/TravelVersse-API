@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cart>
+ */
+class CartFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+{
+    return [
+        'user_id' => \App\Models\User::factory(),
+        'cartable_id' => 1,
+        'cartable_type' => \App\Models\Activity::class,
+        'quantity' => rand(1, 5),
+    ];
+}
+
+}
