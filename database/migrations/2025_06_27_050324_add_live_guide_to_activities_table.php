@@ -15,7 +15,7 @@ return new class extends Migration
         if (!Schema::hasColumn('activities', 'live_guide')) {
             $table->boolean('live_guide')->default(false)->after('type');
         }
-    });
+    }); 
 }
 
 
