@@ -50,7 +50,7 @@ class AuthController extends Controller
                 'email' => ['The provided credentials are incorrect.'],
             ]);
         }
-        $user->notify(new WelcomeUser());
+        // $user->notify(new WelcomeUser());
         $token = $user->createToken('authToken')->plainTextToken;
 
         return response()->json([
